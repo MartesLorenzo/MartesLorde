@@ -428,8 +428,8 @@ a nossa empresa.
           </p>
 
           <div class="rrp-1-cta">
-            <button class="rrp-1-btn" onclick="window.alert('Ação de demonstração: solicitar cartão');">Solicitar Cartão virtual</button>
-            <button class="rrp-1-link" onclick="window.alert('Ação de demonstração: saber mais');">Cartão físico</button>
+            <button class="rrp-1-btn" onclick="openWhatsAppV()">Solicitar Cartão virtual</button>
+            <button class="rrp-1-link" onclick="openWhatsAppF()">Cartão físico</button>
           </div>
         </div>
 
@@ -440,4 +440,58 @@ a nossa empresa.
     </div>
   </section>
 </body>
+
+<script>
+    
+  function openWhatsAppV() {
+  const phone = "+244922888789"; // código do país + número
+  const message = "Olá, desejo solicitar o cartão virtual de 6 mil kwanzas.";
+
+  const url =
+    "https://api.whatsapp.com/send?phone=" +
+    phone +
+    "&text=" +
+    encodeURIComponent(message);
+
+  // cria o elemento <a>
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  document.body.appendChild(link);
+
+  // simula o clique
+  link.click();
+
+  // remove o elemento
+  document.body.removeChild(link);
+}
+
+  function openWhatsAppF() {
+  const phone = "+244922888789"; // código do país + número
+  const message = "Olá, desejo solicitar o cartão físico de 32 mil kwanzas.";
+
+  const url =
+    "https://api.whatsapp.com/send?phone=" +
+    phone +
+    "&text=" +
+    encodeURIComponent(message);
+
+  // cria o elemento <a>
+  const link = document.createElement("a");
+  link.href = url;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+
+  document.body.appendChild(link);
+
+  // simula o clique
+  link.click();
+
+  // remove o elemento
+  document.body.removeChild(link);
+}
+
+</script>
 </html>
